@@ -1,0 +1,443 @@
+/* table */
+@import "colors.less";
+
+.para-ui-MuiGrid-eicTable {
+  .para-ui-MuiMenu-list .para-ui-MuiMenuItem-root {
+    padding: 0;
+    margin: 0;
+  }
+
+
+  .eic-table-td {
+    //overflow: hidden;
+    //text-overflow: ellipsis;
+    //-webkit-box-orient: vertical;
+    //-webkit-line-clamp: 2;
+    //display: -webkit-box;
+  }
+
+  .para-ui-MuiList-padding {
+    padding: 0;
+  }
+
+  .statusColor0 {
+    color: @tableListStatusRed
+  }
+
+  .statusColor1 {
+    color: @blueColor
+  }
+
+  .statusColor-1 {
+    color: @disableFont
+  }
+
+  .statusColor2 {
+    color: @tableListStatusYellow
+  }
+
+  .statusColor3 {
+    color: @tableListStatusYellow
+  }
+
+  .para-ui-MuiButton-text {
+    font-size: 12px;
+    font-weight: 400;
+    padding: 4px 10px;
+  }
+
+  /* 分页 */
+
+  .pageNav {
+    padding: 10px 0 14px 0;
+
+    .para-ui-MuiTablePagination-input {
+
+      select,
+      input,
+      .para-ui-MuiSelect-select {
+        border-radius: 4px;
+        border: 1px solid @textFlag;
+        background: @orgTreeBackground;
+        padding-bottom: 6px;
+      }
+
+      .para-ui-MuiSvgIcon-root {
+        margin: 3px 4px 0 0;
+      }
+    }
+  }
+
+  .para-ui-MuiTableCell-root {
+    max-width: 240px;
+  }
+
+  .para-ui-MuiTableCell-paddingCheckbox {
+    min-width: 0;
+  }
+
+
+}
+
+.eic-filter-menu {
+  .para-ui-MuiPaper-rounded {
+    top: 144px !important;
+    max-height: 300px;
+    max-width: calc(100% - 340px);
+  }
+
+  .para-ui-MuiList-padding {
+    padding: 0;
+  }
+
+  .para-ui-MuiMenu-list .para-ui-MuiMenuItem-root {
+    padding: 0;
+    margin: 0;
+  }
+
+  ul li[role="option"] {
+    text-indent: 0;
+  }
+}
+
+//挪过来的jss
+
+.eicTableRoot {
+  position: relative;
+  background: #FFFFFF;
+  height: calc(100vh - 150px);
+
+  .para-ui-MuiTableCell-root {
+    padding: 0 10px;
+    text-align: left;
+    font-size: 12px;
+    height: 34px;
+    line-height: 14px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    .para-ui-MuiIconButton-root {
+      padding: 4px;
+      margin-right: 20px;
+      position: relative;
+
+      &:last-child {
+        margin-right: 0
+      }
+    }
+
+    button.para-ui-MuiIconButton-root:before {
+      border-right-color: #E5E5E5;
+      border-right-width: 1px;
+      border-right-style: solid;
+      display: inline-block;
+      position: absolute;
+      content: '';
+      top: 6px;
+      right: -10px;
+      width: 1px;
+      height: 16px;
+    }
+
+    button.para-ui-MuiIconButton-root:last-child:before {
+      border: none
+    }
+  }
+
+  .para-ui-MuiCardHeader-root {
+    padding: 0 10px;
+    height: 40px
+  }
+
+  .eic-table-searchbar {
+    height: 40px;
+
+    svg {
+      width: 18px;
+      height: 18px;
+    }
+  }
+
+  .para-ui-MuiCardHeader-action {
+    margin: 0;
+
+    .para-ui-MuiButton-text {
+      padding: 3px 0 3px 14px;
+      height: 40px;
+      border-left: 1px solid #E5E5E5;
+      border-radius: 0;
+
+      &:hover {
+        background: none;
+        color: #000
+      }
+
+      span {
+        font-weight: 400;
+      }
+    }
+  }
+
+  .makeStyles-title-366 span {
+    font-size: 12px
+  }
+
+  .para-ui-MuiTableHead-root {
+    display: table-header-group;
+    background-color: #fafafa;
+    height: 40px;
+
+    .para-ui-MuiTableCell-root {
+      height: 40px;
+    }
+
+    svg {
+      width: 18px;
+      height: 18px;
+    }
+  }
+
+  .PrivateSwitchBase-root-390 {
+    padding: 0
+  }
+
+  .para-ui-MuiCheckbox-root {
+    color: @blueColor
+  }
+
+
+  .eic-table-filterbar-title {
+    padding: 5px 16px;
+
+    span {
+      font-size: 12px;
+    }
+
+    .para-ui-MuiCardHeader-avatar {
+      margin: 0;
+      width: calc(100% - 78px)
+    }
+  }
+
+  .eicTabletitleInputBase {
+    width: 100%;
+
+    .para-ui-MuiInputBase-input {
+      font-size: 12px;
+      line-height: 20px;
+      height: 20px;
+      padding: 5px 0;
+    }
+  }
+
+  .noPadding {
+    padding: 0
+  }
+
+  .eic-table-content {
+    padding: 0 !important
+  }
+
+  .eic-table-inner {
+    overflow: auto
+
+  }
+
+  .nameCell {
+    display: flex;
+    align-items: center
+  }
+
+  .avatar {
+    height: 42px;
+    width: 42px;
+    margin-right: 8px
+  }
+
+  .eic-table-actions {
+    padding: 5px 8px;
+    justify-content: flex-end;
+
+    .para-ui-MuiIconButton-root {
+      padding: 0
+    }
+
+    .para-ui-MuiTablePagination-toolbar {
+      min-height: 30px
+    }
+
+    svg {
+      width: 18px;
+      height: 18px;
+    }
+  }
+
+  .loadEl {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #e8e8e8;
+    z-index: 3;
+    opacity: 0.5;
+  }
+
+  .noDataTips {
+    //height: 34px;
+    width: 100%;
+    text-align: center;
+
+    .para-empty {
+      position: absolute;
+      margin: 20px 0 0 0 !important;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    & > td {
+      width: 100%;
+      line-height: 34px;
+      position: absolute;
+      float: left;
+      max-width: 10000px !important;
+      height: 240px;
+      padding: 0;
+      border-bottom: 0;
+    }
+
+    .para-ui-MuiTableCell-root {
+      text-align: center;
+      line-height: 34px
+    }
+  }
+
+  .arrowBox {
+    display: inline-block;
+    position: relative;
+    top: 4px;
+    height: 42px;
+    line-height: 42px;
+  }
+
+  .arrowUp {
+    transform: rotate(0deg);
+    transition: all ease 0.3s
+  }
+
+  .arrowDown {
+    transform: rotate(180deg);
+    transition: all ease 0.3s;
+  }
+
+  .eicTableFilterBox {
+    display: inline-block;
+    line-height: 40px;
+    margin-right: 20px;
+
+    & > div {
+      display: inline-block;
+      font-size: 12px;
+      vertical-align: middle
+    }
+
+    & > .para-ui-MuiInputBase-root {
+      margin-left: 9px;
+      max-width: 250px;
+      min-width: 125px;
+    }
+
+    .para-ui-MuiInputBase-input {
+      padding: 3px 0;
+      padding-right: 3px;
+    }
+
+    .para-ui-MuiSelect-icon {
+      right: -15px;
+      top: 2px
+    }
+
+  }
+
+  .filterMulti {
+    padding: 0 18px;
+    font-size: 12px;
+
+    .para-ui-MuiCheckbox-root {
+      font-size: 12px;
+    }
+
+    .para-ui-MuiTypography-body2 {
+      font-size: 12px;
+    }
+  }
+
+  //显示列福分jss样式
+
+  .eic-table-eicMultiSelectRoot {
+    .makeStyles-title-312 {
+      span {
+        font-size: 12px
+      }
+    }
+  }
+}
+
+.eic-table-menuItem {
+  padding: 0;
+
+  .para-ui-MuiTypography-body1 {
+    font-size: 12px
+  }
+}
+
+.eic-table-formControlLabel {
+  padding: 4px 8px;
+  width: 100%;
+  margin: 0
+}
+
+.eic-table-formControlCheck {
+  padding: 0
+}
+
+.para-ui-MuiSvgIcon-colorPrimary, .para-ui-MuiIconButton-colorPrimary {
+  color: #0078df !important;
+}
+
+.para-ui-MuiCheckbox-colorPrimary.para-ui-Mui-checked {
+  color: #0078df !important;
+}
+
+/* 选择下拉框 */
+.para-ui-MuiMenuItem-root {
+  font-size: 12px;
+  padding: 4px 0;
+  margin: 0 6px;
+}
+
+/* 表格筛选栏 */
+.para-ui-MuiMenu-list {
+  .para-ui-MuiMenuItem-root {
+    padding: 4px 0;
+    margin: 0 8px;
+    min-width: 44px; /* 优化特小下拉浮动框两边间距问题 */
+    font-size: 12px;
+
+    svg {
+      width: 18px;
+      height: 18px;
+    }
+
+    label {
+      padding: 2px;
+      margin: 0;
+    }
+  }
+}
+//去掉ie输入框默认的叉号和眼睛
+::-ms-clear { display: none; }
+
+::-ms-reveal { display: none; }

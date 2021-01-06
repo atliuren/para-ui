@@ -1,0 +1,1 @@
+import React, {Fragment, FunctionComponent} from 'react';import {ParaAreaLinkage,} from '../../../src'import {pcaa} from 'area-data'interface OwnProps {}type Props = OwnProps;const index: FunctionComponent<Props> = (props) => {    return (        <Fragment>            <ParaAreaLinkage dataSource={pcaa}/>        </Fragment>    );};export default index;

@@ -1,0 +1,1093 @@
+.paraTree .para-tree.para-tree-directory .para-tree-treenode {
+  position: relative;
+}
+
+.paraTree .para-tree.para-tree-directory .para-tree-treenode::before {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 4px;
+  left: 0;
+  -webkit-transition: background-color 0.3s;
+  transition: background-color 0.3s;
+  content: '';
+  pointer-events: none;
+}
+
+.paraTree .para-tree.para-tree-directory .para-tree-treenode:hover::before {
+  background: #f5f5f5;
+}
+
+.paraTree .para-tree.para-tree-directory .para-tree-treenode > * {
+  z-index: 1;
+}
+
+.paraTree .para-tree.para-tree-directory .para-tree-treenode .para-tree-switcher {
+  -webkit-transition: color 0.3s;
+  transition: color 0.3s;
+}
+
+.paraTree .para-tree.para-tree-directory .para-tree-treenode .para-tree-node-content-wrapper {
+  border-radius: 0;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.paraTree .para-tree.para-tree-directory .para-tree-treenode .para-tree-node-content-wrapper:hover {
+  background: transparent
+}
+
+.paraTree .para-tree.para-tree-directory .para-tree-treenode .para-tree-node-content-wrapper.para-tree-node-selected {
+  color: #fff;
+  background: transparent
+}
+
+
+.paraTree .para-tree.para-tree-directory .para-tree-treenode-selected:hover::before, .paraTree .para-tree.para-tree-directory .para-tree-treenode-selected::before {
+  background: #1890ff
+}
+
+.paraTree .para-tree.para-tree-directory .para-tree-treenode-selected .para-tree-switcher {
+  color: #fff
+}
+
+.paraTree .para-tree.para-tree-directory .para-tree-treenode-selected .para-tree-node-content-wrapper {
+  color: #fff;
+  background: transparent
+}
+
+.paraTree .para-tree-checkbox {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  color: rgba(0, 0, 0, 0.65);
+  font-size: 14px;
+  font-variant: tabular-nums;
+  line-height: 1.5715;
+  list-style: none;
+  -webkit-font-feature-settings: 'tnum';
+  font-feature-settings: 'tnum';
+  position: relative;
+  top: -0.09em;
+  display: inline-block;
+  white-space: nowrap;
+  vertical-align: middle;
+  outline: none;
+  cursor: pointer;
+}
+
+.paraTree .para-tree-checkbox-wrapper:hover .para-tree-checkbox-inner,
+.paraTree .para-tree-checkbox:hover .para-tree-checkbox-inner,
+.paraTree .para-tree-checkbox-input:focus + .para-tree-checkbox-inner {
+  border-color: #1890ff
+}
+
+.paraTree .para-tree-checkbox-checked::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 2px;
+  visibility: hidden;
+  -webkit-animation: paraCheckboxEffect 0.36s ease-in-out;
+  animation: paraCheckboxEffect 0.36s ease-in-out;
+  -webkit-animation-fill-mode: backwards;
+  animation-fill-mode: backwards;
+  content: ''
+}
+
+.paraTree .para-tree-checkbox:hover::after,
+.paraTree .para-tree-checkbox-wrapper:hover .para-tree-checkbox::after {
+  visibility: visible
+}
+
+.paraTree .para-tree-checkbox-inner {
+  position: relative;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 16px;
+  height: 16px;
+  background-color: #fff;
+  border: 1px solid #d9d9d9;
+  border-radius: 2px;
+  border-collapse: separate;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+
+.paraTree .para-tree-checkbox-inner::after {
+  position: absolute;
+  top: 50%;
+  left: 22%;
+  display: table;
+  width: 5.71428571px;
+  height: 9.14285714px;
+  border: 2px solid #fff;
+  border-top: 0;
+  border-left: 0;
+  -webkit-transform: rotate(45deg) scale(0) translate(-50%, -50%);
+  transform: rotate(45deg) scale(0) translate(-50%, -50%);
+  opacity: 0;
+  -webkit-transition: all 0.1s cubic-bezier(0.71, -0.46, 0.88, 0.6), opacity 0.1s;
+  transition: all 0.1s cubic-bezier(0.71, -0.46, 0.88, 0.6), opacity 0.1s;
+  content: ' '
+}
+
+.paraTree .para-tree-checkbox-input {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  opacity: 0;
+}
+
+
+.paraTree .para-tree-checkbox-checked .para-tree-checkbox-inner::after {
+  position: absolute;
+  display: table;
+  border: 2px solid #fff;
+  border-top: 0;
+  border-left: 0;
+  -webkit-transform: rotate(45deg) scale(1) translate(-50%, -50%);
+  transform: rotate(45deg) scale(1) translate(-50%, -50%);
+  opacity: 1;
+  -webkit-transition: all 0.2s cubic-bezier(0.12, 0.4, 0.29, 1.46) 0.1s;
+  transition: all 0.2s cubic-bezier(0.12, 0.4, 0.29, 1.46) 0.1s;
+  content: ' '
+}
+
+.paraTree .para-tree-checkbox-checked .para-tree-checkbox-inner {
+  background-color: #1890ff;
+  border-color: #1890ff;
+}
+
+.paraTree .para-tree-checkbox-disabled {
+  cursor: not-allowed
+}
+
+.paraTree .para-tree-checkbox-disabled.para-tree-checkbox-checked .para-tree-checkbox-inner::after {
+  border-color: rgba(0, 0, 0, 0.25);
+  -webkit-animation-name: none;
+  animation-name: none;
+}
+
+.paraTree .para-tree-checkbox-disabled .para-tree-checkbox-input {
+  cursor: not-allowed
+}
+
+.paraTree .para-tree-checkbox-disabled .para-tree-checkbox-inner {
+  background-color: #f5f5f5;
+  border-color: #d9d9d9 !important
+}
+
+.paraTree .para-tree-checkbox-disabled .para-tree-checkbox-inner::after {
+  border-color: #f5f5f5;
+  border-collapse: separate;
+  -webkit-animation-name: none;
+  animation-name: none;
+}
+
+.paraTree .para-tree-checkbox-disabled + span {
+  color: rgba(0, 0, 0, 0.25);
+  cursor: not-allowed;
+}
+
+.paraTree .para-tree-checkbox-disabled:hover::after,
+.paraTree .para-tree-checkbox-wrapper:hover .para-tree-checkbox-disabled::after {
+  visibility: hidden
+}
+
+.paraTree .para-tree-checkbox-wrapper {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  color: rgba(0, 0, 0, 0.65);
+  font-size: 14px;
+  font-variant: tabular-nums;
+  line-height: 1.5715;
+  list-style: none;
+  -webkit-font-feature-settings: 'tnum';
+  font-feature-settings: 'tnum';
+  display: inline-block;
+  cursor: pointer;
+}
+
+.paraTree .para-tree-checkbox-wrapper.para-tree-checkbox-wrapper-disabled {
+  cursor: not-allowed
+}
+
+.paraTree .para-tree-checkbox-wrapper + .para-tree-checkbox-wrapper {
+  margin-left: 8px
+}
+
+.paraTree .para-tree-checkbox + span {
+  padding-right: 8px;
+  padding-left: 8px;
+}
+
+.paraTree .para-tree-checkbox-group {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  color: rgba(0, 0, 0, 0.65);
+  font-size: 14px;
+  font-variant: tabular-nums;
+  line-height: 1.5715;
+  list-style: none;
+  -webkit-font-feature-settings: 'tnum';
+  font-feature-settings: 'tnum';
+  display: inline-block;
+}
+
+.paraTree .para-tree-checkbox-group-item {
+  display: inline-block;
+  margin-right: 8px;
+}
+
+.paraTree .para-tree-checkbox-group-item:last-child {
+  margin-right: 0
+}
+
+.paraTree .para-tree-checkbox-group-item + .para-tree-checkbox-group-item {
+  margin-left: 0
+}
+
+.paraTree .para-tree-checkbox-indeterminate .para-tree-checkbox-inner {
+  background-color: #fff;
+  border-color: #d9d9d9;
+}
+
+.paraTree .para-tree-checkbox-indeterminate .para-tree-checkbox-inner::after {
+  top: 50%;
+  left: 50%;
+  width: 8px;
+  height: 8px;
+  background-color: #1890ff;
+  border: 0;
+  -webkit-transform: translate(-50%, -50%) scale(1);
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 1;
+  content: ' ';
+}
+
+.paraTree .para-tree-checkbox-indeterminate.para-tree-checkbox-disabled .para-tree-checkbox-inner::after {
+  background-color: rgba(0, 0, 0, 0.25);
+  border-color: rgba(0, 0, 0, 0.25);
+}
+
+
+.paraTree .para-tree {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  color: rgba(0, 0, 0, 0.65);
+  font-size: 14px;
+  font-variant: tabular-nums;
+  line-height: 1.5715;
+  list-style: none;
+  -webkit-font-feature-settings: 'tnum';
+  font-feature-settings: 'tnum';
+  background: #fff;
+  border-radius: 2px;
+  -webkit-transition: background-color 0.3s;
+  transition: background-color 0.3s;
+}
+
+
+.paraTree .para-tree-rtl {
+  direction: rtl
+}
+
+.paraTree .para-tree-focused:not(:hover):not(.para-tree-active-focused) {
+  background: #e6f7ff
+}
+
+.paraTree .para-tree-list-holder-inner {
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+}
+
+.paraTree .para-tree.para-tree-block-node .para-tree-list-holder-inner {
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+}
+
+.paraTree .para-tree.para-tree-block-node .para-tree-list-holder-inner .para-tree-node-content-wrapper {
+  -webkit-box-flex: 1;
+  -ms-flex: auto;
+  flex: auto;
+}
+
+.paraTree .para-tree .para-tree-treenode {
+  display: flex;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  padding: 0 0 4px 0;
+  outline: none;
+}
+
+.paraTree .para-tree .para-tree-treenode-rtl {
+  direction: rtl
+}
+
+.paraTree .para-tree .para-tree-treenode-disabled .para-tree-node-content-wrapper {
+  color: rgba(0, 0, 0, 0.25);
+  cursor: not-allowed;
+}
+
+.paraTree .para-tree .para-tree-treenode-disabled .para-tree-node-content-wrapper:hover {
+  background: transparent
+}
+
+.paraTree .para-tree .para-tree-treenode-active .para-tree-node-content-wrapper {
+  background: #f5f5f5
+}
+
+
+.paraTree .para-tree-indent {
+  //-ms-flex-item-align: stretch;
+  align-self: stretch;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.paraTree .para-tree-indent-unit {
+  display: inline-block;
+  width: 24px;
+}
+
+.paraTree .para-tree .para-tree-switcher {
+  -webkit-box-flex: 0;
+  -ms-flex: none;
+  flex: none;
+  width: 24px;
+  height: 24px;
+  margin: 0;
+  line-height: 24px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.paraTree .para-tree .para-tree-switcher .para-tree-switcher-icon, .paraTree .para-tree .para-tree-switcher .para-select-tree-switcher-icon {
+  font-size: 24px;
+  display: inline-block;
+  font-weight: bold;
+}
+
+.paraTree .para-tree .para-tree-switcher-noop {
+  cursor: default
+}
+
+.paraTree .para-tree .para-tree-switcher_close .para-tree-switcher-icon {
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg);
+}
+
+.paraTree .para-tree .para-tree-switcher_open .para-tree-switcher-icon {
+  -webkit-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+
+.paraTree .para-tree-rtl.para-tree .para-tree-switcher_close .para-tree-switcher-icon {
+  -webkit-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+
+.paraTree .para-tree .para-tree-checkbox {
+  top: initial;
+  margin: 4px 8px 0 0;
+}
+
+.paraTree .para-tree .para-tree-node-content-wrapper {
+  min-height: 24px;
+  margin: 0;
+  padding: 0 4px;
+  color: inherit;
+  line-height: 24px;
+  background: transparent;
+  border-radius: 2px;
+  cursor: pointer;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.paraTree .para-tree .para-tree-node-content-wrapper:hover {
+  background-color: #f5f5f5
+}
+
+.paraTree .para-tree .para-tree-node-content-wrapper.para-tree-node-selected {
+  background-color: #bae7ff
+}
+
+.paraTree .para-tree .para-tree-node-content-wrapper .para-tree-iconEle {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  line-height: 24px;
+  text-align: center;
+  vertical-align: top;
+}
+
+.paraTree .para-tree .para-tree-node-content-wrapper .para-tree-iconEle:empty {
+  display: none
+}
+
+.paraTree .para-tree .para-tree-treenode-loading .para-tree-iconEle {
+  display: none
+}
+
+.paraTree .para-tree-node-content-wrapper[draggable='true'] {
+  line-height: 20px;
+  border-top: 2px transparent solid;
+  border-bottom: 2px transparent solid;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.paraTree .para-tree .para-tree-treenode.drag-over > [draggable] {
+  color: white;
+  background-color: #1890ff;
+  opacity: 0.8;
+}
+
+.paraTree .para-tree .para-tree-treenode.drag-over-gap-top > [draggable] {
+  border-top-color: #1890ff
+}
+
+.paraTree .para-tree .para-tree-treenode.drag-over-gap-bottom > [draggable] {
+  border-bottom-color: #1890ff
+}
+
+.paraTree .para-tree-show-line .para-tree-indent-unit {
+  position: relative;
+  height: 100%;
+}
+
+.paraTree .para-tree-show-line .para-tree-indent-unit::before {
+  position: absolute;
+  top: calc(100% - 4px);
+  right: -12px;
+  bottom: -28px;
+  border-right: 1px solid #d9d9d9;
+  content: '';
+}
+
+.paraTree .para-tree-rtl.para-tree-show-line .para-tree-indent-unit::before {
+  right: auto;
+  left: -12px;
+  border-right: none;
+  border-left: 1px solid #d9d9d9;
+}
+
+.paraTree .para-tree-show-line .para-tree-indent-unit-end::before {
+  display: none
+}
+
+.paraTree .para-tree-show-line .para-tree-treenode-motion:not(.para-motion-collapse-leave):not(.para-motion-collapse-appear-active) .para-tree-indent-unit::before {
+  display: none
+}
+
+.paraTree .para-tree-show-line .para-tree-switcher {
+  z-index: 1;
+  background: #fff;
+}
+
+.paraTree .para-select-tree-checkbox {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  color: rgba(0, 0, 0, 0.65);
+  font-size: 14px;
+  font-variant: tabular-nums;
+  line-height: 1.5715;
+  list-style: none;
+  -webkit-font-feature-settings: 'tnum';
+  font-feature-settings: 'tnum';
+  position: relative;
+  top: -0.09em;
+  display: inline-block;
+  white-space: nowrap;
+  vertical-align: middle;
+  outline: none;
+  cursor: pointer;
+}
+
+.paraTree .para-select-tree-checkbox-wrapper:hover .para-select-tree-checkbox-inner,
+.paraTree .para-select-tree-checkbox:hover .para-select-tree-checkbox-inner,
+.paraTree .para-select-tree-checkbox-input:focus + .para-select-tree-checkbox-inner {
+  border-color: #1890ff
+}
+
+.paraTree .para-select-tree-checkbox-checked::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 1px solid #1890ff;
+  border-radius: 2px;
+  visibility: hidden;
+  -webkit-animation: paraCheckboxEffect 0.36s ease-in-out;
+  animation: paraCheckboxEffect 0.36s ease-in-out;
+  -webkit-animation-fill-mode: backwards;
+  animation-fill-mode: backwards;
+  content: '';
+}
+
+.paraTree .para-select-tree-checkbox:hover::after,
+.paraTree .para-select-tree-checkbox-wrapper:hover .para-select-tree-checkbox::after {
+  visibility: visible
+}
+
+.paraTree .para-select-tree-checkbox-inner {
+  position: relative;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 16px;
+  height: 16px;
+  background-color: #fff;
+  border: 1px solid #d9d9d9;
+  border-radius: 2px;
+  border-collapse: separate;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.paraTree .para-select-tree-checkbox-inner::after {
+  position: absolute;
+  top: 50%;
+  left: 22%;
+  display: table;
+  width: 5.71428571px;
+  height: 9.14285714px;
+  border: 2px solid #fff;
+  border-top: 0;
+  border-left: 0;
+  -webkit-transform: rotate(45deg) scale(0) translate(-50%, -50%);
+  transform: rotate(45deg) scale(0) translate(-50%, -50%);
+  opacity: 0;
+  -webkit-transition: all 0.1s cubic-bezier(0.71, -0.46, 0.88, 0.6), opacity 0.1s;
+  transition: all 0.1s cubic-bezier(0.71, -0.46, 0.88, 0.6), opacity 0.1s;
+  content: ' ';
+}
+
+.paraTree .para-select-tree-checkbox-input {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  opacity: 0;
+}
+
+.paraTree .para-select-tree-checkbox-checked .para-select-tree-checkbox-inner::after {
+  position: absolute;
+  display: table;
+  border: 2px solid #fff;
+  border-top: 0;
+  border-left: 0;
+  -webkit-transform: rotate(45deg) scale(1) translate(-50%, -50%);
+  transform: rotate(45deg) scale(1) translate(-50%, -50%);
+  opacity: 1;
+  -webkit-transition: all 0.2s cubic-bezier(0.12, 0.4, 0.29, 1.46) 0.1s;
+  transition: all 0.2s cubic-bezier(0.12, 0.4, 0.29, 1.46) 0.1s;
+  content: ' ';
+}
+
+.paraTree .para-select-tree-checkbox-checked .para-select-tree-checkbox-inner {
+  background-color: #1890ff;
+  border-color: #1890ff;
+}
+
+.paraTree .para-select-tree-checkbox-disabled {
+  cursor: not-allowed
+}
+
+.paraTree .para-select-tree-checkbox-disabled.para-select-tree-checkbox-checked .para-select-tree-checkbox-inner::after {
+  border-color: rgba(0, 0, 0, 0.25);
+  -webkit-animation-name: none;
+  animation-name: none;
+}
+
+.paraTree .para-select-tree-checkbox-disabled .para-select-tree-checkbox-input {
+  cursor: not-allowed
+}
+
+.paraTree .para-select-tree-checkbox-disabled .para-select-tree-checkbox-inner {
+  background-color: #f5f5f5;
+  border-color: #d9d9d9 !important;
+}
+
+.paraTree .para-select-tree-checkbox-disabled .para-select-tree-checkbox-inner::after {
+  border-color: #f5f5f5;
+  border-collapse: separate;
+  -webkit-animation-name: none;
+  animation-name: none;
+}
+
+.paraTree .para-select-tree-checkbox-disabled + span {
+  color: rgba(0, 0, 0, 0.25);
+  cursor: not-allowed;
+}
+
+.paraTree .para-select-tree-checkbox-disabled:hover::after,
+.paraTree .para-select-tree-checkbox-wrapper:hover .para-select-tree-checkbox-disabled::after {
+  visibility: hidden
+}
+
+.paraTree .para-select-tree-checkbox-wrapper {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  color: rgba(0, 0, 0, 0.65);
+  font-size: 14px;
+  font-variant: tabular-nums;
+  line-height: 1.5715;
+  list-style: none;
+  -webkit-font-feature-settings: 'tnum';
+  font-feature-settings: 'tnum';
+  display: inline-block;
+  cursor: pointer;
+}
+
+.paraTree .para-select-tree-checkbox-wrapper.para-select-tree-checkbox-wrapper-disabled {
+  cursor: not-allowed
+}
+
+.paraTree .para-select-tree-checkbox-wrapper + .para-select-tree-checkbox-wrapper {
+  margin-left: 8px
+}
+
+.paraTree .para-select-tree-checkbox + span {
+  padding-right: 8px;
+  padding-left: 8px;
+}
+
+.paraTree .para-select-tree-checkbox-group {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  color: rgba(0, 0, 0, 0.65);
+  font-size: 14px;
+  font-variant: tabular-nums;
+  line-height: 1.5715;
+  list-style: none;
+  -webkit-font-feature-settings: 'tnum';
+  font-feature-settings: 'tnum';
+  display: inline-block;
+}
+
+.paraTree .para-select-tree-checkbox-group-item {
+  display: inline-block;
+  margin-right: 8px;
+}
+
+.paraTree .para-select-tree-checkbox-group-item:last-child {
+  margin-right: 0
+}
+
+
+.paraTree .para-select-tree-checkbox-group-item + .para-select-tree-checkbox-group-item {
+  margin-left: 0
+}
+
+.paraTree .para-select-tree-checkbox-indeterminate .para-select-tree-checkbox-inner {
+  background-color: #fff;
+  border-color: #d9d9d9;
+}
+
+.paraTree .para-select-tree-checkbox-indeterminate .para-select-tree-checkbox-inner::after {
+  top: 50%;
+  left: 50%;
+  width: 8px;
+  height: 8px;
+  background-color: #1890ff;
+  border: 0;
+  -webkit-transform: translate(-50%, -50%) scale(1);
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 1;
+  content: ' ';
+}
+
+.paraTree .para-select-tree-checkbox-indeterminate.para-select-tree-checkbox-disabled .para-select-tree-checkbox-inner::after {
+  background-color: rgba(0, 0, 0, 0.25);
+  border-color: rgba(0, 0, 0, 0.25);
+}
+
+.paraTree .para-tree-select-dropdown {
+  padding: 8px 4px 0
+}
+
+.paraTree .para-tree-select-dropdown-rtl {
+  direction: rtl
+}
+
+.paraTree .para-tree-select-dropdown .para-select-tree {
+  border-radius: 0
+}
+
+.paraTree .para-tree-select-dropdown .para-select-tree-list-holder-inner {
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+}
+
+.paraTree .para-tree-select-dropdown .para-select-tree-list-holder-inner .para-select-tree-treenode {
+  padding-bottom: 8px
+}
+
+.paraTree .para-tree-select-dropdown .para-select-tree-list-holder-inner .para-select-tree-treenode .para-select-tree-node-content-wrapper {
+  -webkit-box-flex: 1;
+  -ms-flex: auto;
+  flex: auto;
+}
+
+.paraTree .para-select-tree {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  color: rgba(0, 0, 0, 0.65);
+  font-size: 14px;
+  font-variant: tabular-nums;
+  line-height: 1.5715;
+  list-style: none;
+  -webkit-font-feature-settings: 'tnum';
+  font-feature-settings: 'tnum';
+  background: #fff;
+  border-radius: 2px;
+  -webkit-transition: background-color 0.3s;
+  transition: background-color 0.3s;
+}
+
+
+.paraTree .para-select-tree-rtl {
+  direction: rtl
+}
+
+.paraTree .para-select-tree-focused:not(:hover):not(.para-select-tree-active-focused) {
+  background: #e6f7ff
+}
+
+.paraTree .para-select-tree-list-holder-inner {
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+}
+
+.paraTree .para-select-tree.para-select-tree-block-node .para-select-tree-list-holder-inner {
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+}
+
+.paraTree .para-select-tree.para-select-tree-block-node .para-select-tree-list-holder-inner .para-select-tree-node-content-wrapper {
+  -webkit-box-flex: 1;
+  -ms-flex: auto;
+  flex: auto;
+}
+
+.paraTree .para-select-tree .para-select-tree-treenode {
+  display: flex;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  padding: 0 0 4px 0;
+  outline: none;
+}
+
+.paraTree .para-select-tree .para-select-tree-treenode-rtl {
+  direction: rtl
+}
+
+.paraTree .para-select-tree .para-select-tree-treenode-disabled .para-select-tree-node-content-wrapper {
+  color: rgba(0, 0, 0, 0.25);
+  cursor: not-allowed;
+}
+
+.paraTree .para-select-tree .para-select-tree-treenode-disabled .para-select-tree-node-content-wrapper:hover {
+  background: transparent
+}
+
+.paraTree .para-select-tree .para-select-tree-treenode-active .para-select-tree-node-content-wrapper {
+  background: #f5f5f5
+}
+
+.paraTree .para-select-tree-indent {
+  //-ms-flex-item-align: stretch;
+  align-self: stretch;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.paraTree .para-select-tree-indent-unit {
+  display: inline-block;
+  width: 24px;
+}
+
+.paraTree .para-select-tree .para-select-tree-switcher {
+  -webkit-box-flex: 0;
+  -ms-flex: none;
+  flex: none;
+  width: 24px;
+  height: 24px;
+  margin: 0;
+  line-height: 24px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.paraTree .para-select-tree .para-select-tree-switcher .para-tree-switcher-icon,
+.paraTree .para-select-tree .para-select-tree-switcher .para-select-tree-switcher-icon {
+  font-size: 24px;
+  display: inline-block;
+  font-weight: bold;
+}
+
+.paraTree .para-select-tree .para-select-tree-switcher-noop {
+  cursor: default
+}
+
+.paraTree .para-select-tree .para-select-tree-switcher_close .para-select-tree-switcher-icon {
+  -webkit-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+}
+
+.paraTree .para-select-tree-rtl.para-select-tree .para-select-tree-switcher_close .para-select-tree-switcher-icon {
+  -webkit-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+
+.paraTree .para-select-tree .para-select-tree-checkbox {
+  top: initial;
+  margin: 4px 8px 0 0;
+}
+
+
+.paraTree .para-select-tree .para-select-tree-node-content-wrapper {
+  min-height: 24px;
+  margin: 0;
+  padding: 0 4px;
+  color: inherit;
+  line-height: 24px;
+  background: transparent;
+  border-radius: 2px;
+  cursor: pointer;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.paraTree .para-select-tree .para-select-tree-node-content-wrapper:hover {
+  background-color: #f5f5f5
+}
+
+.paraTree .para-select-tree .para-select-tree-node-content-wrapper.para-select-tree-node-selected {
+  background-color: #bae7ff
+}
+
+.paraTree .para-select-tree .para-select-tree-node-content-wrapper .para-select-tree-iconEle {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  line-height: 24px;
+  text-align: center;
+  vertical-align: top;
+}
+
+.paraTree .para-select-tree .para-select-tree-node-content-wrapper .para-select-tree-iconEle:empty {
+  display: none
+}
+
+.paraTree .para-select-tree .para-select-tree-treenode-loading .para-select-tree-iconEle {
+  display: none
+}
+
+.paraTree .para-select-tree-node-content-wrapper[draggable='true'] {
+  line-height: 20px;
+  border-top: 2px transparent solid;
+  border-bottom: 2px transparent solid;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.paraTree .para-select-tree .para-select-tree-treenode.drag-over > [draggable] {
+  color: white;
+  background-color: #1890ff;
+  opacity: 0.8;
+}
+
+.paraTree .para-select-tree .para-select-tree-treenode.drag-over-gap-top > [draggable] {
+  border-top-color: #1890ff
+}
+
+.paraTree .para-select-tree .para-select-tree-treenode.drag-over-gap-bottom > [draggable] {
+  border-bottom-color: #1890ff
+}
+
+.paraTree .para-select-tree-show-line .para-select-tree-indent-unit {
+  position: relative;
+  height: 100%;
+}
+
+.paraTree .para-select-tree-show-line .para-select-tree-indent-unit::before {
+  position: absolute;
+  top: calc(100% - 4px);
+  right: -12px;
+  bottom: -28px;
+  border-right: 1px solid #d9d9d9;
+  content: '';
+}
+
+.paraTree .para-select-tree-rtl.para-select-tree-show-line .para-select-tree-indent-unit::before {
+  right: auto;
+  left: -12px;
+  border-right: none;
+  border-left: 1px solid #d9d9d9;
+}
+
+.paraTree .para-select-tree-show-line .para-select-tree-indent-unit-end::before {
+  display: none
+}
+
+.paraTree .para-select-tree-show-line .para-select-tree-treenode-motion:not(.para-motion-collapse-leave):not(.para-motion-collapse-appear-active) .para-select-tree-indent-unit::before {
+  display: none
+}
+
+.paraTree .para-select-tree-show-line .para-select-tree-switcher {
+  z-index: 1;
+  background: #fff;
+}
+
+.paraTree .para-tree-select-dropdown-rtl .para-select-tree .para-select-tree-switcher_close .para-select-tree-switcher-icon {
+  -webkit-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+
+.paraTree .para-tree-show-arrow .para-tree-switcher {
+  display: none !important
+}
+
+.paraTree .para-tree .para-tree-hidden .para-tree-checkbox {
+  display: none;
+  color: #2196f3 !important;
+}
+
+.paraTree .para-tree .para-tree-hidden {
+  margin-left: 24px
+}
+
+.paraTree .para-tree-more {
+  cursor: pointer;
+  color: rgb(25, 118, 210);
+}
+
+.FormTreeSelect {
+  & > .para-form-tree-content {
+    display: table;
+    border: 1px solid rgba(0, 0, 0, 0.23);
+    border-radius: 4px;
+
+    & .select-data {
+      & > ul {
+        width: 100%;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+
+        & > li {
+          width: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border-bottom: 1px solid rgba(0, 0, 0, 0.23);
+          padding: 6px 10px;
+          box-sizing: border-box;
+          list-style: none;
+
+          &:last-child {
+            border-bottom: none
+          }
+
+          & .select-item-name {
+            padding-right: 20px;
+            display: inline-block;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            font-size: 14px
+          }
+
+          & .select-item-cha {
+            width: 24px;
+            cursor: pointer;
+
+            & svg {
+              position: relative;
+              top: 2px;
+              width: 17px;
+              color: #afafaf;
+            }
+
+            &:hover {
+              color: red
+            }
+          }
+        }
+      }
+
+      & .select-disabled {
+        color: rgba(0, 0, 0, 0.26);
+
+        & .select-item-cha {
+          cursor: move;
+
+          &:hover {
+            color: rgba(0, 0, 0, 0.26);
+          }
+        }
+      }
+    }
+
+    & .select-btn {
+      display: table-cell;
+      vertical-align: middle;
+      width: 30px;
+      border-left: 1px solid rgba(0, 0, 0, 0.23);
+    }
+  }
+}

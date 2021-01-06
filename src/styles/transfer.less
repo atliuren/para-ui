@@ -1,0 +1,155 @@
+.para-ui-transfer {
+  font-size: 12px;
+
+  svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .listbox {
+    border: 1px solid #d9d9d9;
+    border-radius: 4px;
+    width: 280px;
+    padding: 0 !important;
+    position: relative;
+    padding-bottom: 36px;
+
+    .Mask {
+      background-color: rgba(0, 0, 0, 0.2);
+      z-index: 1;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      cursor: not-allowed;
+    }
+
+    /* reset */
+
+    .para-transfer-searchbar {
+      border: none;
+      border-bottom: 1px solid #d9d9d9;
+      margin-bottom: 0;
+      border-radius: 4px 4px 0 0;
+      height: 36px;
+
+      input {
+        font-size: 13px;
+      }
+    }
+
+    .list {
+      height: 295px;
+      overflow-y: auto;
+      cursor: pointer;
+      border-radius: 0 0 4px 4px;
+      margin-bottom: 35px;
+
+
+      &::-webkit-scrollbar { /*滚动条整体样式*/
+        width: 3px; /*高宽分别对应横竖滚动条的尺寸*/
+        height: 10px;
+      }
+
+      &::-webkit-scrollbar-thumb { /*滚动条里面小方块*/
+        border-radius: 10px;
+        -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+        background: #535353;
+
+      }
+
+      &::-webkit-scrollbar-track { /*滚动条里面轨道*/
+        -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+        border-radius: 10px;
+        background: #EDEDED;
+      }
+
+      .listItem {
+        min-height: 30px;
+        line-height: 30px;
+        padding: 0 10px;
+        border-bottom: 1px solid #d9d9d9;
+        background-color: #fff;
+        word-break: break-all;
+        display: flex;
+        align-items: center;
+
+        .transferCheck {
+          padding-left: 0;
+          &.Mui-disabled{
+            color: rgba(0,0,0,0.26)!important;
+          }
+        }
+
+        .iconImg {
+          display: inline-block;
+          height: 20px;
+          width: 20px;
+          margin-right: 10px
+        }
+
+        &:hover {
+          background-color: #d9d9d9;
+        }
+
+        &.active {
+          background-color: #0078df;
+          color: #fff
+        }
+      }
+    }
+
+    .fixedBottom {
+      position: absolute;
+      height: 36px;
+      line-height: 36px;
+      bottom: 0;
+      background-color: #fff;
+      justify-content: space-between;
+      border-top: 1px solid #d9d9d9;
+      border-radius: 0 0 4px 4px;
+      padding: 0 10px;
+
+      .transferCheck {
+        padding: 5px 5px 5px 0;
+        &.Mui-disabled{
+        color: rgba(0,0,0,0.26)!important;
+      }
+      }
+    }
+  }
+
+  .centerBox {
+    margin: 0 10px;
+    width: 60px;
+
+    .iconfont {
+      font-size: 17px;
+      line-height: 17px;
+    }
+
+    button {
+      min-width: 40px !important;
+    }
+  }
+
+  .rotateArrow {
+    & > span:first-child {
+      transform: rotate(90deg)
+    }
+
+  }
+}
+
+.item-dragable {
+  display: flex;
+  padding: 0.3rem;
+  border-radius: 0.2rem;
+  background-color: #fff6;
+  margin-bottom: 0.3rem;
+
+  &.sortable-ghost {
+    background-color: #c8ebfb;
+  }
+}

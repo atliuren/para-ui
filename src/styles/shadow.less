@@ -1,0 +1,29 @@
+.paraShadow {
+  position: relative;
+
+  & ul, li {
+    listStyle: none
+  }
+
+  & .canvas-box {
+    width: 80px;
+    height: 80px;
+    border: 1px solid #c4c4c4;
+  }
+
+  & canvas {
+    cursor: move
+  }
+
+  & .para-form-box {
+    & li {
+      display: flex;
+      flexWrap: wrap;
+
+      & > * {
+        margin: 8px
+        //margin: theme.spacing(1)
+      }
+    }
+  }
+}

@@ -1,0 +1,103 @@
+.para-check-box-tree {
+  min-height: 460px;
+  max-height: 460px;
+  overflow: auto;
+  display: flex;
+  flex-wrap: nowrap !important;
+  flex-direction: column;
+
+  label {
+    margin: 0 !important;
+
+    &:hover {
+      background-color: rgba(0, 120, 223, 0.04);
+      border-radius: 4px;
+    }
+  }
+}
+
+.para-tree-select-content {
+  min-height: 460px;
+  max-height: 460px;
+  overflow: auto;
+}
+
+.checkbox-tree-more {
+  margin-left: 10px;
+}
+
+.para-search-content-scroll {
+  max-height: 460px;
+  min-height: 460px;
+  overflow: auto;
+}
+
+/* para-tree-select */
+.para-tree-select {
+  &-typography {
+    span {
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+  }
+
+  &-group {
+    display: inline-flex;
+    border-radius: 4px;
+    border: 1px solid #bdbdbd;
+  }
+
+  &-left {
+    border-right: 1px solid #bdbdbd;
+    min-width: 180px;
+    max-width: 180px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  &-right {
+    text-align: center;
+    align-items: center;
+    display: flex;
+
+    .MuiButtonBase-root {
+      min-width: 40px;
+      padding: 6px 10px;
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+.para-tree-select-nodata {
+  min-height: 20px;
+}
+
+.para-tree-select-popover-paper {
+  max-width: 340px !important;
+  min-width: 340px !important;
+}
+
+
+.para-request-tree {
+  &-skeleton {
+    max-width: 310px;
+  }
+}
+
+.para-checkbox-tree {
+  &-skeleton {
+    max-width: 310px;
+  }
+}
+
+.checkbox-tree-more-loading {
+  pointer-events: none;
+}
+
+/* 复写掉样式冲突的问题 */
+.para-tree-fragment {
+  padding: 0 !important;
+}
